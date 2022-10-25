@@ -18,14 +18,7 @@ fun Route.speakerRoute(service: SpeakerService) {
 
     route("api/speakers") {
         get() {
-            //call.respondText("Hello Android WorldWide")
-
             call.respond(service.getAll())
-
-//            if (service.getAll().isEmpty())
-//                call.respondText("No speaker were found at the database")
-//            else
-//                call.respond(fakeDB.values)
         }
 
         post {
@@ -40,12 +33,6 @@ fun Route.speakerRoute(service: SpeakerService) {
             call.respond(speaker)
         }
 
-        delete("{id}") {
-            val id = call.parameters["id"] ?: return@delete call.respond(HttpStatusCode.BadRequest)
-            if (service.delete(id.toInt())) call.respond(HttpStatusCode.NoContent)
-            else call.respond(HttpStatusCode.NotFound)
-        }
-
         put("{id}") {
             val id = call.parameters["id"] ?: return@put call.respond(HttpStatusCode.BadRequest)
             val speaker = call.receive<Speaker>()
@@ -55,5 +42,12 @@ fun Route.speakerRoute(service: SpeakerService) {
             call.respond(message = speaker, status = HttpStatusCode.OK)
 
         }
+
+        delete("{id}") {
+            val id = call.parameters["id"] ?: return@delete call.respond(HttpStatusCode.BadRequest)
+            if (service.delete(id.toInt())) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound)
+        }
+
     }
 }
