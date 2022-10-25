@@ -1,5 +1,6 @@
 package io.github.manuelernesto.service
 
+import io.github.manuelernesto.model.Speaker
 import io.github.manuelernesto.repository.SpeakerRepository
 
 /**

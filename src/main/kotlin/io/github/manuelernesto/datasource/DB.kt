@@ -1,6 +1,6 @@
 package io.github.manuelernesto.datasource
 
-import io.github.manuelernesto.Speaker
+import io.github.manuelernesto.model.Speaker
 
 /**
  * @author  Manuel Ernesto (manuelernest0)

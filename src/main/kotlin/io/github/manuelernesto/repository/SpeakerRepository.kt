@@ -1,8 +1,8 @@
 package io.github.manuelernesto.repository
 
-import io.github.manuelernesto.Speaker
 import io.github.manuelernesto.datasource.db
 import io.github.manuelernesto.datasource.getId
+import io.github.manuelernesto.model.Speaker
 
 /**
  * @author  Manuel Ernesto (manuelernest0)
